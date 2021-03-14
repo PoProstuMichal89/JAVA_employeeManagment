@@ -1,0 +1,76 @@
+Zadanie Kadry
+
+Napisać program do zarządzania danymi działu kadr w firmie. W tym celu należy napisać klasy
+Pracownik oraz Kadry.
+Klasa Pracownik powinna przechowywać następujące dane jako pola prywatne:
+imię – typu String;
+nazwisko – typu String;
+placa – typu double;
+plec – typu char;
+dzial – typu int;
+Dodatkowo klasa Pracownik powinna zawierać:
+– konstruktor umożliwiający przypisanie wartości wszystkim polom klasy;
+– metodę toString (nadpisanie metody z klasy Object), która zwraca łańcuch zawierający dane
+pracownika;
+– metodę czyPracujeWDziale, która zwraca true, jeżeli pracownik pracuje w dziale o
+podanym numerze
+Klasa Kadry służy do przechowywania i zarządzania listą zatrudnionych pracowników i posiada
+następujące pola prywatne:
+ private Pracownik [] pracownicy_;
+ private int zatrudnienie_;
+Pole zatrudnienie_ przechowuje aktualną liczbę pracowników firmy, których dane przechowywane
+są w tablicy pracownicy_. Firma nigdy nie będzie zatrudniać więcej niż 100 pracowników.
+Klasa ta powinna mieć następujące metody:
+1) konstruktor inicjujący pola klasy, w tym przydzielający pamięć dla tablicy pracownicy_
+2) metodę dodajPracownika, która dołączy podanego jako parametr pracownika do tablicy
+pracownicy_, jeżeli jeszcze nie osiągnięto maksymalnego zatrudnienia;
+3) metodę dodajPracownikaInteraktywnie, która pyta użytkownika o dane nowego
+pracownika, a następnie dodaje go do listy pracowników firmy.
+4) metodę importujZPlikuTekstowego, która umożliwia wczytanie danych pracowników
+zapisanych w pliku tekstowym o nazwie podanej jako parametr metody. Dane pracowników
+zapisane są w formacie: Imię Nazwisko Płaca Płeć Nr działu
+5) metodę sredniZarobek, której wynikiem jest średnia płaca pracowników w całej firmie;
+6) metodę sredniZarobek(int dzial), której wynikiem jest średnia płaca pracowników
+podanego działu;
+7) metodę dajDzialy, której wynikiem jest tablica typu int [] zawierająca numery działów, w
+których pracują zatrudnieni w firmie
+8) metodę pisz, która wyświetla na ekranie informacje o pracownikach firmy oraz średnich
+zarobkach w całej firmie oraz poszczególnych działach;
+9) metodę zapiszDoPliku, która zapisuje do pliku o podanej nazwie listę pracowników, ale
+w postaci binarnej przy użyciu mechanizmu serializacji
+10) metodę odczytajZPliku, która odczytuje z pliku o podanej nazwie pracowników i dodaje
+ich do listy zatrudnionych. Dane pracowników zapisane są w pliku utworzonym za pomocą
+metody zapiszDoPliku, a więc należy użyć mechanizmu serializacji do ich odczytu
+Przykładowe wykonanie programu:
+Wczytano poprawnie dane 5 pracowników z pliku: pracownicy.txt
+Liczba pracowników: 5
+         Jan        Kowalski  M  3 2010,00 zł
+   Agnieszka           Cuber  K  3 2900,00 zł
+        Adam           Nowak  M  4 1100,00 zł
+      Sylwia            Zych  K  3 2100,00 zł
+       Beata           Dudek  K  4 1900,00 zł
+Średnia płaca w firmie: 2002,00 zł
+Średnia płaca w dziale 3 wynosi: 2336,67 zł
+Średnia płaca w dziale 4 wynosi: 1500,00 zł
+Podaj dane nowego pracownika:
+        imi : Robert ę
+        nazwisko: Smith
+        płe : M ć
+        dział: 4
+        płaca: 3000
+Liczba pracowników: 6
+         Jan        Kowalski  M  3 2010,00 zł
+   Agnieszka           Cuber  K  3 2900,00 zł
+        Adam           Nowak  M  4 1100,00 zł
+      Sylwia            Zych  K  3 2100,00 zł
+       Beata           Dudek  K  4 1900,00 zł
+      Robert           Smith  M  4 3000,00 zł
+Średnia płaca w firmie: 2168,33 zł
+Średnia płaca w dziale 3 wynosi: 2336,67 zł
+Średnia płaca w dziale 4 wynosi: 2000,00 zł
+Przykładowa zawartość pliku tekstowego z danymi pracowników:
+Jan Kowalski 2010 M 3
+Agnieszka Cuber 2900 K 3
+Adam Nowak 1100 M 4
+Sylwia Zych 2100 K 3
+Beata Dudek 1900 K 4
